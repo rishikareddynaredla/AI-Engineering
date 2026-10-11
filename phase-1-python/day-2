@@ -1,0 +1,83 @@
+#list basics
+nums=[10,20,30,40,50]
+print(nums[0]," ",nums[-1]," ",sum(nums)," ",len(nums)," ",max(nums)," ",min(nums)," ",list(reversed(nums)))
+
+#student names
+students=["Rahul","Aman","Priya","Arjun"]
+students.append("Sneha")
+students.remove("Aman")
+students[2] = "Kavya"
+if("Arjun" in students):
+    print("Arjun is there")
+else:
+    print("Arjun isn't there")
+for i,student in enumerate(students):
+    print(i," ",student)
+
+#marks analyser
+marks=[85,72,91,64,88,45,93]
+print(sum(marks)," ",sum(marks)/len(marks)," ",max(marks)," ",min(marks)," ",len(marks)," ")
+for i in marks:
+    if i>40:
+        print(i," is a pass")
+
+for i in marks:
+    if(i>=90):
+        print(i," is an A grade")
+
+#unique values
+numbers = [1, 2, 2, 3, 4, 4, 5, 5, 5, 6]
+print("unique values are:",list(set(numbers)))
+
+#dictionary
+student={
+    "name": "Rahul",
+    "age": 20,
+    "branch": "CSE",
+    "cgpa":9.9
+}
+print(student["name"]," ",str(student["age"])," ")
+student["college"]="CMR"
+student["cgpa"]=9.69
+student.pop("age")
+for i,j in student.items():
+    print(i," ",j)
+
+#nested dictionary
+
+student = {
+    "name": "Rahul",
+    "marks": {
+        "python": 85,
+        "dsa": 78,
+        "math": 91
+    }
+}
+
+print("Name:",student["name"])
+for i,j in student["marks"].items():
+    print(i,":",j)
+
+#list of dictionaires
+
+students = [
+    {"name": "Rahul", "marks": 85},
+    {"name": "Aman", "marks": 72},
+    {"name": "Priya", "marks": 91},
+    {"name": "Arjun", "marks": 64}
+]
+for i in students:
+    print(i["name"],"->",i["marks"])
+
+#comprehension
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+squares=(i**2 for i in numbers)
+print(list(squares))
+
+even=( i for i in numbers if(i%2==0))
+print(list(even))
+
+#zip
+names = ["Rahul", "Aman", "Priya"]
+marks = [85, 72, 91]
+print(dict(zip(names,marks)))
